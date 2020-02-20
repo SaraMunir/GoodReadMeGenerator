@@ -1,0 +1,23 @@
+{
+  "name": "goodreadmegenerator",
+  "version": "1.0.0",
+  "description": "to create a read me generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaraMunir/GoodReadMeGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaraMunir/GoodReadMeGenerator/issues"
+  },
+  "homepage": "https://github.com/SaraMunir/GoodReadMeGenerator#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "inquirer": "^7.0.4"
+  }
+}
