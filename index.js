@@ -90,14 +90,14 @@ async function main(){
 
         // const myData = userResponse;
         var ans = (`
-        #${gitUsername} 
-        #${projectTittle} 
-        #${projectDescription}
-        #${tableOfContent}
-        #${installationProcess}
-        #${instruction}
-        #${instructionExample}
-        #${licenseName}
+        # ${gitUsername} 
+        ## ${projectTittle} 
+        ### ${projectDescription}
+        # ${tableOfContent}
+        # ${installationProcess}
+        # ${instruction}
+        # ${instructionExample}
+        # ${licenseName}
         #${licenseUrl}
         #${contributorsNo}
         `)

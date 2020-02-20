@@ -1,12 +1,12 @@
 
-        #SaraMunir 
-        #Read Me Generator 
-        #create clean beautiful readme files
-        #table
-        #bla bla bla
-        #bla bla
-        #hello
-        #
+        # sara munir 
+        ## read me generator 
+        ### creates beautiful generator
+        # hello
+        # god knows
+        # dont know
+        # bla bla bla
+        # bla bla
         #
         #
         
