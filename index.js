@@ -90,16 +90,16 @@ async function main(){
 
         // const myData = userResponse;
         var ans = (`
-        # ${gitUsername} 
-        ## ${projectTittle} 
-        ### ${projectDescription}
-        # ${tableOfContent}
-        # ${installationProcess}
-        # ${instruction}
-        # ${instructionExample}
-        # ${licenseName}
-        #${licenseUrl}
-        #${contributorsNo}
+# ${gitUsername} 
+## ${projectTittle} 
+### ${projectDescription}
+# ${tableOfContent}
+# ${installationProcess}
+# ${instruction}
+# ${instructionExample}
+# ${licenseName}
+#${licenseUrl}
+#${contributorsNo}
         `)
         // const gitUsernameStuff = await axios.get(`https://gist.github.com/${gitUsername}`);
         // const gitData = gitUsernameStuff.data;
@@ -109,7 +109,7 @@ async function main(){
         //     if(err) throw err;
         //     console.log('folder created...');
         // });
-        var writeResult = fs.writeFileSync(path.join(__dirname, '/test', 'hello.md'), ans )
+        var writeResult = fs.writeFileSync(path.join(__dirname, '../GoodReadMeGenerator', 'readmegen.md'), ans )
         console.log("something completed. ")
     }
     main();
