@@ -23,11 +23,6 @@ async function main(){
         },
         {
             type: "input",
-            message: "Add table of contents ",
-            name: "tableOfContent"
-        },
-        {
-            type: "input",
             message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
             name: "installationProcess"
         },
@@ -53,18 +48,8 @@ async function main(){
         },
         {
             type: "input",
-            message: "How many contributors are in your project",
-            name: "contributorsNo"
-        },
-        {
-            type: "input",
-            message: "provide the names of the contributors",
-            name: "contributorsNames"
-        },
-        {
-            type: "input",
-            message: "provide the github url of the contributors",
-            name: "contributorsGitUrl"
+            message: "please enter user names of the contributor if any (If there are mulitple contributor, seperate names with comma and no space! )",
+            name: "contributorsGitUserName"
         },
         {
             type: "input",
@@ -77,39 +62,75 @@ async function main(){
         const gitUsername = userResponse.username;
         const projectTittle = userResponse.projectTittle;
         const projectDescription = userResponse.projectDescription;
-        const tableOfContent = userResponse.tableOfContent;
         const installationProcess = userResponse.installationProcess;
         const instruction = userResponse.instruction;
         const instructionExample = userResponse.instructionExample;
         const licenseName = userResponse.licenseName;
         const licenseUrl = userResponse.licenseUrl;
-        const contributorsNo = userResponse.contributorsNo;
-        const contributorsNames = userResponse.contributorsNames;
-        const contributorsGitUrl = userResponse.contributorsGitUrl;
+        const contributorUserNames = userResponse.contributorsGitUserName;
         const tests = userResponse.tests;
 
-        // const myData = userResponse;
-        var ans = (`
-# ${gitUsername} 
-## ${projectTittle} 
-### ${projectDescription}
-# ${tableOfContent}
-# ${installationProcess}
-# ${instruction}
-# ${instructionExample}
-# ${licenseName}
-#${licenseUrl}
-#${contributorsNo}
-        `)
-        // const gitUsernameStuff = await axios.get(`https://gist.github.com/${gitUsername}`);
-        // const gitData = gitUsernameStuff.data;
-        // console.log(gitData)
+            // fetching data from git
+            // user
+        const gitResponse = await axios.get(`https://api.github.com/users/${gitUsername}`);
+        const gitData = gitResponse.data;
+        const gitName = gitData.login;
+        const gitEmail = gitData.email;
+        const gitlocation = gitData.location;
+        const gitUrl = gitData.html_url;
+        const gitProfileImage = gitData.avatar_url;
+            // contributor
+        const contributorUserNamesArray = contributorUserNames.split(",");
+        console.log(contributorUserNamesArray);
+        // const  = listOfContributorsUserNames.
+        // contributorsGitUserName
+        var resultContributor;
+        for (i=0; i<contributorUserNamesArray.length; i++){
+            var contributorsGitUserName = contributorUserNamesArray[i]
+            const gitResponse2 = await axios.get(`https://api.github.com/users/${contributorsGitUserName}`);
+            var gitContribuProfileImage = gitResponse2.data.avatar_url;
+            var gitContribuUrl = gitResponse2.data.html_url;
+            var gitContribuEmail = gitResponse2.data.email;
+            var resultContributor = resultContributor + (`
+            \n${contributorsGitUserName}
+            \n<img src="${gitContribuProfileImage}" alt="drawing" width="150" display="inline"/>
+            \nLink: ${gitContribuUrl}
+            \nEmail: ${gitContribuEmail}`);
+        }
+        
+        var result = (`
+# ${projectTittle} 
+${projectDescription}
+\n* [Installation](#Installation)
+\n* [License](#License)
+\n* [Contributors](#Contributors)
+\n* [Author](#Author)
+\n* [Tests](#Tests)
 
-        // var writeDirector = fs.mkdir(path.join(__dirname, '/test'), {}, function(err){
-        //     if(err) throw err;
-        //     console.log('folder created...');
-        // });
-        var writeResult = fs.writeFileSync(path.join(__dirname, '../GoodReadMeGenerator', 'readmegen.md'), ans )
-        console.log("something completed. ")
+## Installation
+\`\`\`
+${installationProcess}
+\`\`\`
+### Instructions
+${instruction}
+\`\`\`
+${instructionExample}
+\`\`\`
+## License 
+This project is licensed under the ${licenseName} - see the ${licenseUrl} file for details
+## Contributors
+${resultContributor}
+## Tests
+${tests}
+## Author 
+\n![ProfileImage](${gitProfileImage})
+\n**${gitName}**
+\nEmail: ${gitEmail}
+\nLocation:${gitlocation}
+\nGitHub: ${gitUrl}
+`)
+var writeResult = fs.writeFileSync(path.join(__dirname, '../GoodReadMeGenerator', 'readMe.md'), result )
+console.log("file generated....")
     }
-    main();
+main();
+
