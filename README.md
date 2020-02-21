@@ -62,3 +62,7 @@ Email: null
 Location:Toronto
 
 GitHub: https://github.com/SaraMunir
+## ScreenShots of the generated Read me
+
+<img src="assets/terminalScreenShot.png" alt="drawing" width="" display="inline"/>
+            
