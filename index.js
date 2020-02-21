@@ -97,7 +97,6 @@ async function main(){
             \nLink: ${gitContribuUrl}
             \nEmail: ${gitContribuEmail}`);
         }
-        
         var result = (`
 # ${projectTittle} 
 ${projectDescription}
