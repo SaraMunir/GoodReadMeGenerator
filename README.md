@@ -1,6 +1,6 @@
 
-# Read Me Generator 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+# Good README Generator 
+Create a command-line application that dynamically generates a README.md from a user's input. The application will be invoked with the following command  node index.js  The user will be prompted for their GitHub username, which will be used to make a call to the GitHub API to retrieve their email and profile image. They will then be prompted with questions about their project.
 
 * [Installation](#Installation)
 
@@ -14,15 +14,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Installation
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
+1. npm init \n2. npm install axios \n3. npm install inquirer
 ```
 ### Instructions
-npm axios and inquirer
+1. npm init \n2. npm install axios \n3. npm install inquirer
 ```
 npm install inquirer
 ```
 ## License 
-This project is licensed under the MIT - see the mit.md file for details
+This project is licensed under the MIT - see the MIT.md file for details
 ## Contributors
 undefined
             
@@ -34,14 +34,6 @@ Link: https://github.com/Akanksha-Gupta03
             
 Email: null
             
-nmoras
-            
-<img src="https://avatars0.githubusercontent.com/u/47071232?v=4" alt="drawing" width="150" display="inline"/>
-            
-Link: https://github.com/nmoras
-            
-Email: null
-            
 jsanthos01
             
 <img src="https://avatars2.githubusercontent.com/u/55720502?v=4" alt="drawing" width="150" display="inline"/>
@@ -49,8 +41,16 @@ jsanthos01
 Link: https://github.com/jsanthos01
             
 Email: null
+            
+nmoras
+            
+<img src="https://avatars0.githubusercontent.com/u/47071232?v=4" alt="drawing" width="150" display="inline"/>
+            
+Link: https://github.com/nmoras
+            
+Email: null
 ## Tests
-
+running test.....
 ## Author 
 
 ![ProfileImage](https://avatars0.githubusercontent.com/u/50241569?v=4)
