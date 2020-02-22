@@ -27,7 +27,7 @@ This project is licensed under the MIT - see the MIT.md file for details
 <img src="assets/terminalScreenShot.png" alt="drawing" />
 ### Terminal Screen Shot
 <img src="assets/ReadMeScreenShot.png" alt="drawing" />
-## Author 
+### Author
 
 **SaraMunir**
 
