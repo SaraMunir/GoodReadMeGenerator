@@ -8,7 +8,7 @@ async function main(){
     .prompt([
         {
             type: "input",
-            message: "What is your user name?",
+            message: "What is your GitHub user name?",
             name: "username"
         },
         {
@@ -18,7 +18,7 @@ async function main(){
         },
         {
             type: "input",
-            message: "Provide description",
+            message: "Provide detail description",
             name: "projectDescription"
         },
         {
@@ -48,7 +48,7 @@ async function main(){
         },
         {
             type: "input",
-            message: "please enter user names of the contributor if any (If there are mulitple contributor, seperate names with comma and no space! )",
+            message: "please enter git hub user names of the contributor if any (If there are mulitple contributor, seperate names with comma and no space! )",
             name: "contributorsGitUserName"
         },
         {
@@ -69,7 +69,6 @@ async function main(){
         const licenseUrl = userResponse.licenseUrl;
         const contributorUserNames = userResponse.contributorsGitUserName;
         const tests = userResponse.tests;
-
             // fetching data from git
             // user
         const gitResponse = await axios.get(`https://api.github.com/users/${gitUsername}`);
@@ -92,25 +91,21 @@ async function main(){
             var gitContribuUrl = gitResponse2.data.html_url;
             var gitContribuEmail = gitResponse2.data.email;
             var resultContributor = resultContributor + (`
-            \n${contributorsGitUserName}
-            \n<img src="${gitContribuProfileImage}" alt="drawing" width="150" display="inline"/>
-            \nLink: ${gitContribuUrl}
-            \nEmail: ${gitContribuEmail}`);
+            \n <img src="${gitContribuProfileImage}" alt="drawing" width="150" display="inline"/> ${contributorsGitUserName}  GitHubLink: ${gitContribuUrl}`);
         }
         var result = (`
 # ${projectTittle} 
 ${projectDescription}
 \n* [Installation](#Installation)
+\n* [Instructions](#Instructions)
 \n* [License](#License)
 \n* [Contributors](#Contributors)
 \n* [Author](#Author)
 \n* [Tests](#Tests)
 
 ## Installation
-\`\`\`
 ${installationProcess}
-\`\`\`
-### Instructions
+## Instructions
 ${instruction}
 \`\`\`
 ${instructionExample}
