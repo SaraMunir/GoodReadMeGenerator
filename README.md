@@ -23,19 +23,11 @@ user runs node index.js and the application starts
 ```
 ## License 
 This project is licensed under the MIT - see the MIT.md file for details
-## Contributors
-undefined
-            
- <img src="https://avatars2.githubusercontent.com/u/55720502?v=4" alt="drawing" width="150" display="inline"/> jsanthos01  GitHubLink: https://github.com/jsanthos01
-            
- <img src="https://avatars2.githubusercontent.com/u/58857277?v=4" alt="drawing" width="150" display="inline"/> stephanieblom  GitHubLink: https://github.com/stephanieblom
-            
- <img src="https://avatars2.githubusercontent.com/u/59745460?v=4" alt="drawing" width="150" display="inline"/> Akanksha-Gupta03  GitHubLink: https://github.com/Akanksha-Gupta03
-## Tests
-runing jest
+### Terminal Screen Shot
+<img src="assets/terminalScreenShot.png" alt="drawing" />
+### Terminal Screen Shot
+<img src="assets/ReadMeScreenShot.png" alt="drawing" />
 ## Author 
-
-![ProfileImage](https://avatars0.githubusercontent.com/u/50241569?v=4)
 
 **SaraMunir**
 
